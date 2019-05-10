@@ -1,0 +1,23 @@
+<template>
+    <div class="demo-only">
+        <nav class="slds-nav-vertical" aria-label="Sub page">
+            <div class="slds-nav-vertical__section">
+                <h2 id="entity-header" class="slds-nav-vertical__title slds-text-title_caps">Categories</h2>
+                <ul>
+                    <li class={allClasses} data-level="All" onclick={setAll}>
+                        <a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header" aria-current="page">All</a>
+                    </li>
+                    <li class={primaryClasses} data-level="Primary" onclick={setPrimary}>
+                        <a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header">Primary</a>
+                    </li>
+                    <li class={secondaryClasses} data-level="Secondary" onclick={setSecondary}>
+                        <a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header">Secondary</a>
+                    </li>
+                    <li class={terciaryClasses} data-level="Terciary" onclick={setTerciary}>
+                        <a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header">Terciary</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>    
+</template>

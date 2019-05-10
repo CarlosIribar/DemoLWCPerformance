@@ -1,0 +1,27 @@
+<aura:component >
+    <aura:attribute name="contacts" type="contact[]" />
+    <aura:attribute name="level" type="String" />
+
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Account Name">Phone</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Close Date">Email</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <aura:iteration items="{!v.contacts}" var="contact">
+                <aura:if isTrue="{!v.level == contact.Level__c || v.level == 'All'}">
+                    <c:contactItem contact="{#contact}" />
+                </aura:if>
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>

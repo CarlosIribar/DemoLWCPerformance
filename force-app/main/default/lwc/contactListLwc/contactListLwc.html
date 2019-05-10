@@ -1,0 +1,22 @@
+<template>
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate" title="Opportunity Name">Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Account Name">Phone</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Close Date">Email</div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={contacts} for:item="contact">
+                <c-contact-item-lwc key={contact.Id} contact={contact} level={level}></c-contact-item-lwc>
+            </template>
+        </tbody>
+    </table>
+</template>

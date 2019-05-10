@@ -1,0 +1,14 @@
+<aura:component >
+    <aura:attribute name="contact" type="contact" />
+    <tr>
+        <td data-label="Account Name">
+            <div class="slds-truncate">{!v.contact.Name}</div>
+        </td>
+        <td data-label="Close Date">
+            <div class="slds-truncate">{!v.contact.Phone}</div>
+        </td>
+        <td data-label="Prospecting">
+            <div class="slds-truncate">{!v.contact.Email}</div>
+        </td>
+    </tr>
+</aura:component>

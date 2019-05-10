@@ -1,0 +1,18 @@
+<aura:component controller="ContactBookCtrl" implements="force:appHostable">
+    <aura:attribute name="contacts" type="Contact[]" />
+    <aura:attribute name="contactsToShow" type="Contact[]" />
+    <aura:attribute name="filterLevel" type="String" default="All" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:handler name="setLevel" event="c:setLevel" action="{!c.setLevelAction}" />
+    <aura:handler name="searchBy" event="c:searchBy" action="{!c.filterBy}" />
+
+    <div class="container">
+        <div class="sidebar">
+            <c:sidebar selectedLevel="{!v.filterLevel}" />
+        </div>
+        <article class="main">
+            <c:search /> Total: {!v.contactsToShow.length}
+            <c:contactList contacts="{!v.contactsToShow}" level="{!v.filterLevel}" />
+        </article>
+    </div>
+</aura:component>

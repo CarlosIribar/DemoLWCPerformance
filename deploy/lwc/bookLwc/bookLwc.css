@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    padding: 10px;
+    height: 100vh;
+    background: white;
+}
+
+.sidebar {
+    flex: 2
+}
+
+.main {
+    flex: 7;
+    margin-left: 15px;
+    overflow: scroll;
+}

@@ -1,0 +1,26 @@
+<aura:component >
+    <aura:registerEvent name="setLevel" type="c:setLevel" />
+    <aura:attribute name="selectedLevel" type="String" />
+
+    <div class="demo-only">
+        <nav class="slds-nav-vertical" aria-label="Sub page">
+            <div class="slds-nav-vertical__section">
+                <h2 id="entity-header" class="slds-nav-vertical__title slds-text-title_caps">Categories</h2>
+                <ul>
+                    <li class="{!v.selectedLevel == 'All' ?'slds-nav-vertical__item slds-is-active' : slds-nav-vertical__item}" onclick="{!c.setAll}">
+                        <a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header" aria-current="page">All</a>
+                    </li>
+                    <li class="{!v.selectedLevel == 'Primary' ?'slds-nav-vertical__item slds-is-active' : slds-nav-vertical__item}" onclick="{!c.setPrimary}">
+                        <a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header">Primary</a>
+                    </li>
+                    <li class="{!v.selectedLevel == 'Secondary' ?'slds-nav-vertical__item slds-is-active' : slds-nav-vertical__item}" onclick="{!c.setSecondary}">
+                        <a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header">Secondary</a>
+                    </li>
+                    <li class="{!v.selectedLevel == 'Tertiary' ?'slds-nav-vertical__item slds-is-active' : slds-nav-vertical__item}" onclick="{!c.setTertiary}">
+                        <a href="javascript:void(0);" class="slds-nav-vertical__action" aria-describedby="entity-header">Terciary</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</aura:component>

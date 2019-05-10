@@ -1,0 +1,16 @@
+.THIS.container {
+    display: flex;
+    padding: 10px;
+    height: 100vh;
+    background: white;
+}
+
+.THIS .sidebar {
+    flex: 2
+}
+
+.THIS .main {
+    flex: 7;
+    margin-left: 15px;
+    overflow: scroll;
+}
