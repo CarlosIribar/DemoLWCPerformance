@@ -4,8 +4,9 @@
             <c-sidebar-lwc onchangelevel={changeLevelHandler}></c-sidebar-lwc>
         </div>
         <article class="main">
-            Search
-            <c-contact-list-lwc contacts={contacts} level={level}></c-contact-list-lwc>
+            <c-search-lwc onsearchby={searchByHandler}></c-search-lwc>
+            Total: {getTotal}
+            <c-contact-list-lwc contacts={contactsToShow} level={level}></c-contact-list-lwc>
         </article>
     </div>
 </template>

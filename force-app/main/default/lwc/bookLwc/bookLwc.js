@@ -3,12 +3,23 @@ import getContacts from '@salesforce/apex/ContactBookCtrl.getContacts';
 
 
 export default class BookLwc extends LightningElement {
-    @track contacts;
+    contacts;  // {# v.contacts}
+    @track contactsToShow; //{! v.contacts}
     @track level;
+
+    connectedCallback() {
+        this.contactsToShow = this.contacts;
+        this.level = 'All';
+    }
+
+    get getTotal() {
+        return this.contactsToShow ? this.contactsToShow.length : 0;
+    }
+    
     @wire(getContacts)
     wiredContacts({ error, data }) {
         if (data) {
-            this.contacts = data;
+            this.contactsToShow = this.contacts = data;
             console.log(data);
         } else if (error) {
             console.log(error);
@@ -16,8 +27,19 @@ export default class BookLwc extends LightningElement {
     }
 
     changeLevelHandler(event) {        
-        console.log(event);
         this.level = event.detail;
+    }
+
+    searchByHandler(event) {
+        const searchTerm = event.detail;
+        
+        if (searchTerm) {
+            this.contactsToShow = this.contacts.filter(function(contact){
+              return contact.Name.toUpperCase().includes(searchTerm.toUpperCase());
+            })
+        } else {
+            this.contactsToShow = this.contacts;
+        }
     }
 
 }
